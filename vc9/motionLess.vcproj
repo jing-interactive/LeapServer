@@ -60,7 +60,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\..\LeapSDK\lib\x86\Leapd.lib ws2_32.lib"
+				AdditionalDependencies="..\LeapSDK\lib\x86\Leapd.lib ws2_32.lib"
+				OutputFile="$(SolutionDir)\..\bin\$(ProjectName)_d.exe"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="1"
@@ -86,7 +87,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy ..\..\LeapSDK\lib\x86\Leapd.dll &quot;$(OutDir)&quot;;"
+				CommandLine=""
 			/>
 		</Configuration>
 		<Configuration
@@ -134,7 +135,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\..\LeapSDK\lib\x86\Leap.lib ws2_32.lib"
+				AdditionalDependencies="..\LeapSDK\lib\x86\Leap.lib ws2_32.lib"
+				OutputFile="$(SolutionDir)\..\bin\$(ProjectName).exe"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="1"
@@ -162,7 +164,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy ..\..\LeapSDK\lib\x86\Leap.dll &quot;$(OutDir)&quot;;"
+				CommandLine=""
 			/>
 		</Configuration>
 	</Configurations>
@@ -173,11 +175,11 @@
 			Name="LeapSDK"
 			>
 			<File
-				RelativePath="..\..\LeapSDK\include\Leap.h"
+				RelativePath="..\LeapSDK\include\Leap.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\LeapSDK\include\LeapMath.h"
+				RelativePath="..\LeapSDK\include\LeapMath.h"
 				>
 			</File>
 		</Filter>
@@ -185,132 +187,128 @@
 			Name="ofxOsc"
 			>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOsc.h"
+				RelativePath="..\ofxOsc\oscpack\IpEndpointName.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscArg.h"
+				RelativePath="..\ofxOsc\oscpack\IpEndpointName.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscBundle.cpp"
+				RelativePath="..\ofxOsc\oscpack\MessageMappingOscPacketListener.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscBundle.h"
+				RelativePath="..\ofxOsc\oscpack\win32\NetworkingUtils.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscMessage.cpp"
+				RelativePath="..\ofxOsc\oscpack\NetworkingUtils.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscMessage.h"
+				RelativePath="..\ofxOsc\ofxOsc.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscReceiver.cpp"
+				RelativePath="..\ofxOsc\ofxOscArg.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscReceiver.h"
+				RelativePath="..\ofxOsc\ofxOscBundle.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscSender.cpp"
+				RelativePath="..\ofxOsc\ofxOscBundle.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\ofxOsc\ofxOscSender.h"
+				RelativePath="..\ofxOsc\ofxOscMessage.cpp"
 				>
 			</File>
-			<Filter
-				Name="oscpack"
+			<File
+				RelativePath="..\ofxOsc\ofxOscMessage.h"
 				>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\IpEndpointName.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\IpEndpointName.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\MessageMappingOscPacketListener.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\win32\NetworkingUtils.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\NetworkingUtils.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscException.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscHostEndianness.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscOutboundPacketStream.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscOutboundPacketStream.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscPacketListener.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscPrintReceivedElements.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscPrintReceivedElements.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscReceivedElements.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscReceivedElements.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscTypes.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\OscTypes.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\PacketListener.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\TimerListener.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\win32\UdpSocket.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\ofxOsc\oscpack\UdpSocket.h"
-					>
-				</File>
-			</Filter>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\ofxOscReceiver.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\ofxOscReceiver.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\ofxOscSender.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\ofxOscSender.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscException.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscHostEndianness.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscOutboundPacketStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscOutboundPacketStream.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscPacketListener.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscPrintReceivedElements.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscPrintReceivedElements.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscReceivedElements.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscReceivedElements.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscTypes.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\OscTypes.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\PacketListener.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\TimerListener.h"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\win32\UdpSocket.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ofxOsc\oscpack\UdpSocket.h"
+				>
+			</File>
 		</Filter>
 		<File
-			RelativePath="..\motionLess.cpp"
+			RelativePath="..\src\motionLess.cpp"
 			>
 		</File>
 	</Files>

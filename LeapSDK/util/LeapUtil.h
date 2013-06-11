@@ -211,6 +211,56 @@ inline const char* BoolToStr( uint32_t bVal )
   return bVal ? "On" : "Off";
 }
 
+template<int _HistoryLength=256>
+class RollingAverage
+{
+public:
+  enum 
+  {
+    kHistoryLength = _HistoryLength
+  };
+
+public:
+  RollingAverage() { Reset(); }
+
+  void Reset() 
+  {
+    m_uiCurIndex  = 0;
+    m_fNumSamples = 0.0f;
+    m_fSum        = 0.0f;
+    m_fAverage    = 0.0f;
+    for ( int i = 0; i < kHistoryLength; m_afSamples[i++] = 0.0f );   
+  }
+
+  float AddSample( float fSample ) 
+  {
+    m_fNumSamples =   Min( (m_fNumSamples + 1.0f), static_cast<float>(kHistoryLength) );
+    m_fSum        -=  m_afSamples[m_uiCurIndex];
+    m_fSum        +=  fSample;
+    m_fAverage    =   m_fSum * (1.0f/m_fNumSamples);
+
+    m_afSamples[m_uiCurIndex] = fSample;
+
+    m_uiCurIndex = static_cast<uint32_t>((m_uiCurIndex + 1) % kHistoryLength);
+
+    return m_fAverage;
+  }
+
+  float     GetAverage()    const { return m_fAverage; }
+  float     GetSum()        const { return m_fSum; }
+  uint32_t  GetNumSamples() const { return static_cast<uint32_t>(m_fNumSamples); }
+
+  /// index 0 is the oldest sample, index kHistorySize - 1 is the newest.
+  float     operator[](uint32_t uiIdx) const { return m_afSamples[(m_uiCurIndex + uiIdx) % kHistoryLength]; }
+
+private:
+  uint32_t      m_uiCurIndex;
+  float         m_fNumSamples;
+  float         m_fSum;
+  float         m_fAverage;
+  float         m_afSamples[kHistoryLength];
+};
+
 /// a graphics system agnostic camera that provides a point of view and a view matrix
 /// as well as utility methods for moving the point of view around in useful ways.
 /// field of view, aspect ratio and clipping planes are stored but not handled directly

@@ -6,7 +6,8 @@
 * Leap Motion and you, your company or other organization.                     *
 \******************************************************************************/
 #include "LeapScene.h"
-#include <float.h>
+#include <cfloat>
+#include <cstring>
 
 namespace Leap {
 

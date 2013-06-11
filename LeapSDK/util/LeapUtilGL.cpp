@@ -11,11 +11,11 @@
 #if !defined(__GLU_H__)
   #if defined(WIN32)
     #include <windows.h>
-    #include <GL/GLU.h>
+    #include <GL/glu.h>
   #elif defined(__MACH__)
     #include <OpenGL/glu.h>
   #else
-    #include <GL/GLU.h>
+    #include <GL/glu.h>
   #endif
 #endif // !__GL_H__
 

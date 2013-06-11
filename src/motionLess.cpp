@@ -47,6 +47,7 @@ Vector bboxMax(-FLT_MAX, -FLT_MAX, -FLT_MAX);
 Vector bboxMin(-180.0f, 100.0f, -350.0f);
 Vector bboxMax(+180.0f, 450.0f, 100.0f);
 #endif
+
 class AppListener : public Listener {
 public:
     virtual void onInit(const Controller&);
@@ -80,9 +81,13 @@ void AppListener::onExit(const Controller& controller) {
 
 void AppListener::onFrame(const Controller& controller) {
     // Get the most recent frame and report some basic information
-    const Frame frame = controller.frame();
+    static Frame prevFrame;
 
-    ::Sleep(1);
+    const Frame frame = controller.frame();
+    if (prevFrame == frame)
+        return;
+
+    prevFrame = frame;
 
     const HandList&     hands       = frame.hands();
     const FingerList&   fingers     = frame.fingers();
@@ -188,65 +193,67 @@ void AppListener::onFrame(const Controller& controller) {
     tuioSender.sendBundle(bundle);
 
     // Get gestures
-    for (int g = 0; g < gestures.count(); ++g) {
+    for (int g = 0; g < gestures.count(); ++g) 
+    {
         Gesture gesture = gestures[g];
 
-        switch (gesture.type()) {
-case Gesture::TYPE_CIRCLE:
-    {
-        CircleGesture circle = gesture;
-        std::string clockwiseness;
+        switch (gesture.type()) 
+        {
+        case Gesture::TYPE_CIRCLE:
+            {
+                CircleGesture circle = gesture;
+                std::string clockwiseness;
 
-        if (circle.pointable().direction().angleTo(circle.normal()) <= PI/4) {
-            clockwiseness = "clockwise";
-        } else {
-            clockwiseness = "counterclockwise";
-        }
+                if (circle.pointable().direction().angleTo(circle.normal()) <= PI/4) {
+                    clockwiseness = "clockwise";
+                } else {
+                    clockwiseness = "counterclockwise";
+                }
 
-        // Calculate angle swept since last frame
-        float sweptAngle = 0;
-        if (circle.state() != Gesture::STATE_START) {
-            CircleGesture previousUpdate = CircleGesture(controller.frame(1).gesture(circle.id()));
-            sweptAngle = (circle.progress() - previousUpdate.progress()) * 2 * PI;
-        }
-        std::cout << "Circle id: " << gesture.id()
-            << ", state: " << gesture.state()
-            << ", progress: " << circle.progress()
-            << ", radius: " << circle.radius()
-            << ", angle " << sweptAngle * RAD_TO_DEG
-            <<  ", " << clockwiseness << std::endl;
-        break;
-    }
-case Gesture::TYPE_SWIPE:
-    {
-        SwipeGesture swipe = gesture;
-        std::cout << "Swipe id: " << gesture.id()
-            << ", state: " << gesture.state()
-            << ", direction: " << swipe.direction()
-            << ", speed: " << swipe.speed() << std::endl;
-        break;
-    }
-case Gesture::TYPE_KEY_TAP:
-    {
-        KeyTapGesture tap = gesture;
-        std::cout << "Key Tap id: " << gesture.id()
-            << ", state: " << gesture.state()
-            << ", position: " << tap.position()
-            << ", direction: " << tap.direction()<< std::endl;
-        break;
-    }
-case Gesture::TYPE_SCREEN_TAP:
-    {
-        ScreenTapGesture screentap = gesture;
-        std::cout << "Screen Tap id: " << gesture.id()
-            << ", state: " << gesture.state()
-            << ", position: " << screentap.position()
-            << ", direction: " << screentap.direction()<< std::endl;
-        break;
-    }
-default:
-    std::cout << "Unknown gesture type." << std::endl;
-    break;
+                // Calculate angle swept since last frame
+                float sweptAngle = 0;
+                if (circle.state() != Gesture::STATE_START) {
+                    CircleGesture previousUpdate = CircleGesture(controller.frame(1).gesture(circle.id()));
+                    sweptAngle = (circle.progress() - previousUpdate.progress()) * 2 * PI;
+                }
+                std::cout << "Circle id: " << gesture.id()
+                    << ", state: " << gesture.state()
+                    << ", progress: " << circle.progress()
+                    << ", radius: " << circle.radius()
+                    << ", angle " << sweptAngle * RAD_TO_DEG
+                    <<  ", " << clockwiseness << std::endl;
+                break;
+            }
+        case Gesture::TYPE_SWIPE:
+            {
+                SwipeGesture swipe = gesture;
+                std::cout << "Swipe id: " << gesture.id()
+                    << ", state: " << gesture.state()
+                    << ", direction: " << swipe.direction()
+                    << ", speed: " << swipe.speed() << std::endl;
+                break;
+            }
+        case Gesture::TYPE_KEY_TAP:
+            {
+                KeyTapGesture tap = gesture;
+                std::cout << "Key Tap id: " << gesture.id()
+                    << ", state: " << gesture.state()
+                    << ", position: " << tap.position()
+                    << ", direction: " << tap.direction()<< std::endl;
+                break;
+            }
+        case Gesture::TYPE_SCREEN_TAP:
+            {
+                ScreenTapGesture screentap = gesture;
+                std::cout << "Screen Tap id: " << gesture.id()
+                    << ", state: " << gesture.state()
+                    << ", position: " << screentap.position()
+                    << ", direction: " << screentap.direction()<< std::endl;
+                break;
+            }
+        default:
+            //std::cout << "Unknown gesture type." << std::endl;
+            break;
         }
     }
 #if 0
