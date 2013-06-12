@@ -44,7 +44,7 @@ void ofxOscSender::setup( std::string hostname, int port )
 void ofxOscSender::sendBundle( ofxOscBundle& bundle )
 {
 	static const int OUTPUT_BUFFER_SIZE = 32768;
-	char buffer[OUTPUT_BUFFER_SIZE];
+    char buffer[OUTPUT_BUFFER_SIZE] = {0};
 	osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE );
 
 	// serialise the bundle
@@ -56,7 +56,7 @@ void ofxOscSender::sendBundle( ofxOscBundle& bundle )
 void ofxOscSender::sendMessage( ofxOscMessage& message )
 {
 	static const int OUTPUT_BUFFER_SIZE = 16384;
-	char buffer[OUTPUT_BUFFER_SIZE];
+	char buffer[OUTPUT_BUFFER_SIZE] = {0};
     osc::OutboundPacketStream p( buffer, OUTPUT_BUFFER_SIZE );
 
 	// serialise the message
