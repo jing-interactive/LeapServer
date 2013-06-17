@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="motionLess"
+	Name="LeapServer"
 	ProjectGUID="{37821949-38EA-4E09-A293-55BDCF728299}"
-	RootNamespace="motionLess"
+	RootNamespace="LeapServer"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -308,7 +308,7 @@
 			</File>
 		</Filter>
 		<File
-			RelativePath="..\src\motionLess.cpp"
+			RelativePath="..\src\main.cpp"
 			>
 		</File>
 	</Files>

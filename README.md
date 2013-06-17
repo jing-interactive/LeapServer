@@ -1,4 +1,4 @@
-LeapMotionLess
+LeapServer
 ==============
 
 A lightweight TUIO server for Leap Motion
