@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include "../LeapSDK/include/Leap.h"
-#include "../ofxOsc/ofxOscSender.h"
+#include "../_common/ofxOsc/ofxOscSender.h"
 #include <windows.h>
 
 using namespace Leap;

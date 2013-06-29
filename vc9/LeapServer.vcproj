@@ -187,123 +187,123 @@
 			Name="ofxOsc"
 			>
 			<File
-				RelativePath="..\ofxOsc\oscpack\IpEndpointName.cpp"
+				RelativePath="..\_common\ofxOsc\oscpack\IpEndpointName.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\IpEndpointName.h"
+				RelativePath="..\_common\ofxOsc\oscpack\IpEndpointName.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\MessageMappingOscPacketListener.h"
+				RelativePath="..\_common\ofxOsc\oscpack\MessageMappingOscPacketListener.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\win32\NetworkingUtils.cpp"
+				RelativePath="..\_common\ofxOsc\oscpack\win32\NetworkingUtils.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\NetworkingUtils.h"
+				RelativePath="..\_common\ofxOsc\oscpack\NetworkingUtils.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOsc.h"
+				RelativePath="..\_common\ofxOsc\ofxOsc.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscArg.h"
+				RelativePath="..\_common\ofxOsc\ofxOscArg.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscBundle.cpp"
+				RelativePath="..\_common\ofxOsc\ofxOscBundle.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscBundle.h"
+				RelativePath="..\_common\ofxOsc\ofxOscBundle.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscMessage.cpp"
+				RelativePath="..\_common\ofxOsc\ofxOscMessage.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscMessage.h"
+				RelativePath="..\_common\ofxOsc\ofxOscMessage.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscReceiver.cpp"
+				RelativePath="..\_common\ofxOsc\ofxOscReceiver.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscReceiver.h"
+				RelativePath="..\_common\ofxOsc\ofxOscReceiver.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscSender.cpp"
+				RelativePath="..\_common\ofxOsc\ofxOscSender.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\ofxOscSender.h"
+				RelativePath="..\_common\ofxOsc\ofxOscSender.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscException.h"
+				RelativePath="..\_common\ofxOsc\oscpack\OscException.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscHostEndianness.h"
+				RelativePath="..\_common\ofxOsc\oscpack\OscHostEndianness.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscOutboundPacketStream.cpp"
+				RelativePath="..\_common\ofxOsc\oscpack\OscOutboundPacketStream.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscOutboundPacketStream.h"
+				RelativePath="..\_common\ofxOsc\oscpack\OscOutboundPacketStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscPacketListener.h"
+				RelativePath="..\_common\ofxOsc\oscpack\OscPacketListener.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscPrintReceivedElements.cpp"
+				RelativePath="..\_common\ofxOsc\oscpack\OscPrintReceivedElements.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscPrintReceivedElements.h"
+				RelativePath="..\_common\ofxOsc\oscpack\OscPrintReceivedElements.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscReceivedElements.cpp"
+				RelativePath="..\_common\ofxOsc\oscpack\OscReceivedElements.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscReceivedElements.h"
+				RelativePath="..\_common\ofxOsc\oscpack\OscReceivedElements.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscTypes.cpp"
+				RelativePath="..\_common\ofxOsc\oscpack\OscTypes.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\OscTypes.h"
+				RelativePath="..\_common\ofxOsc\oscpack\OscTypes.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\PacketListener.h"
+				RelativePath="..\_common\ofxOsc\oscpack\PacketListener.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\TimerListener.h"
+				RelativePath="..\_common\ofxOsc\oscpack\TimerListener.h"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\win32\UdpSocket.cpp"
+				RelativePath="..\_common\ofxOsc\oscpack\win32\UdpSocket.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\ofxOsc\oscpack\UdpSocket.h"
+				RelativePath="..\_common\ofxOsc\oscpack\UdpSocket.h"
 				>
 			</File>
 		</Filter>
